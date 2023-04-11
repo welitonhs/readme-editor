@@ -1,3 +1,10 @@
+## Document Analyzes API
+
+Essa API tem a responsabilidade de fazer a comunicação com nosso parceiro para a realização de documentoscopia.
+
+
+### Fluxo atual para uma analise de documentos:
+
 ```mermaid
 sequenceDiagram
     Client-->>+Server: Send image file
@@ -14,7 +21,7 @@ sequenceDiagram
     else hasErrors
         loop 
             Server->>-Client: Return Errors
-            Client->>+Client: Change doc with Errors
+            Client->>+Client: Change doc(s) with Errors
             Client-->>+Server: Send new image file
             Server->>+Storage: Upload image file in the storage
             Storage-->>-Server: URL Image uploaded
